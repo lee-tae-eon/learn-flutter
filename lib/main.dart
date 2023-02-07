@@ -16,6 +16,12 @@ class App extends StatelessWidget {
   // * override 부모 클래스의 메소드를 덮어씌움
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Text("hello world!"));
+    // * base가 되는 app  - 구글의 material or ios 의 cupertino중에 선태 -> material 추천
+    // * rule - screen must need to have scaffold (provied structure)
+    return const MaterialApp(
+      home: Scaffold(
+        body: Text("hello world!"),
+      ),
+    );
   }
 }
