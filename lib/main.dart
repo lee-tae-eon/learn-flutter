@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
+class Player {
+  String name;
+
+  Player({required this.name});
+}
+
 // * flutter 는 위젯을 조합해서 애플리케이션을 만든다
 // * https://docs.flutter.dev/development/ui/widgets - 공식 widgets
 // * widgets을 만드는 것은 just add class
 void main() {
+  var taeeon = Player(name: "taeeon");
+
   runApp(const App());
 }
 
@@ -20,13 +28,26 @@ class App extends StatelessWidget {
     // * rule - screen must need to have scaffold (provied structure)
     return MaterialApp(
       home: Scaffold(
-        body: const Center(
-          child: Text("hello world!"),
-        ),
-        appBar: AppBar(
-          title: const Text("app bar"),
-        ),
-      ),
+          backgroundColor: Colors.black54,
+          body: Column(
+            children: [
+              const SizedBox(
+                height: 80,
+              ),
+              Row(
+                children: [
+                  Column(
+                    children: const [
+                      Text("hey, selena",
+                          style: TextStyle(color: Colors.white)),
+                      Text("welcome, back",
+                          style: TextStyle(color: Colors.white)),
+                    ],
+                  )
+                ],
+              )
+            ],
+          )),
     );
   }
 }
