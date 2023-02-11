@@ -38,14 +38,17 @@ class App extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(
-                    children: const [
-                      Text("hey, selena",
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const Text("hey, selena",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 38,
                               fontWeight: FontWeight.bold)),
                       Text("welcome, back",
-                          style: TextStyle(color: Colors.white)),
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.6),
+                          )),
                     ],
                   )
                 ],
