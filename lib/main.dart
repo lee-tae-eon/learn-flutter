@@ -28,32 +28,36 @@ class App extends StatelessWidget {
     // * rule - screen must need to have scaffold (provied structure)
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: Colors.black54,
-          body: Column(
-            children: [
-              const SizedBox(
-                height: 80,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const Text("hey, selena",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 38,
-                              fontWeight: FontWeight.bold)),
-                      Text("welcome, back",
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.6),
-                          )),
-                    ],
-                  )
-                ],
-              ),
-            ],
+          backgroundColor: const Color.fromARGB(255, 27, 26, 26),
+          body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 80,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        const Text("Hey, Taeeon",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 38,
+                                fontWeight: FontWeight.bold)),
+                        Text("welcome, back",
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.6),
+                              fontSize: 18,
+                            )),
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
           )),
     );
   }
