@@ -35,17 +35,21 @@ class App extends StatelessWidget {
                 height: 80,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(
                     children: const [
                       Text("hey, selena",
-                          style: TextStyle(color: Colors.white)),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 38,
+                              fontWeight: FontWeight.bold)),
                       Text("welcome, back",
                           style: TextStyle(color: Colors.white)),
                     ],
                   )
                 ],
-              )
+              ),
             ],
           )),
     );
