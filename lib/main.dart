@@ -20,7 +20,7 @@ class App extends StatelessWidget {
     // * rule - screen must need to have scaffold (provied structure)
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: const Color.fromARGB(255, 27, 26, 26),
+          backgroundColor: const Color.fromRGBO(27, 26, 26, 1),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
