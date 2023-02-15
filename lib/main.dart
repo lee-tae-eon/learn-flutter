@@ -57,13 +57,25 @@ class App extends StatelessWidget {
                       fontSize: 22,
                       color: Colors.white.withOpacity(0.8),
                     )),
-                const SizedBox(height: 10),
+                const SizedBox(
+                  height: 10,
+                ),
                 const Text("\$5 194 482",
                     style: TextStyle(
                       fontSize: 44,
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
-                    ))
+                    )),
+                const SizedBox(
+                  height: 28,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      child: const Text("Transfer"),
+                    )
+                  ],
+                )
               ],
             ),
           )),
