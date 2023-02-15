@@ -22,8 +22,9 @@ class App extends StatelessWidget {
       home: Scaffold(
           backgroundColor: const Color.fromRGBO(27, 26, 26, 1),
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 40),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
                   height: 80,
@@ -48,6 +49,21 @@ class App extends StatelessWidget {
                     )
                   ],
                 ),
+                const SizedBox(
+                  height: 120,
+                ),
+                Text("Total Balance",
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.white.withOpacity(0.8),
+                    )),
+                const SizedBox(height: 10),
+                const Text("\$5 194 482",
+                    style: TextStyle(
+                      fontSize: 44,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ))
               ],
             ),
           )),
