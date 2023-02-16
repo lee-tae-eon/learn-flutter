@@ -67,12 +67,25 @@ class App extends StatelessWidget {
                       color: Colors.white,
                     )),
                 const SizedBox(
-                  height: 28,
+                  height: 24,
                 ),
                 Row(
                   children: [
                     Container(
-                      child: const Text("Transfer"),
+                      decoration: BoxDecoration(
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(45),
+                      ),
+                      child: const Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 50),
+                          child: Text("Transfer",
+                              style: TextStyle(
+                                fontSize: 16,
+                              ))),
+                    ),
+                    Container(
+                      child: const Text("Request"),
                     )
                   ],
                 )
