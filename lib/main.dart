@@ -70,6 +70,7 @@ class App extends StatelessWidget {
                   height: 24,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
                       decoration: BoxDecoration(
@@ -85,8 +86,18 @@ class App extends StatelessWidget {
                               ))),
                     ),
                     Container(
-                      child: const Text("Request"),
-                    )
+                      decoration: BoxDecoration(
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(45),
+                      ),
+                      child: const Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 50),
+                          child: Text("Transfer",
+                              style: TextStyle(
+                                fontSize: 16,
+                              ))),
+                    ),
                   ],
                 )
               ],
