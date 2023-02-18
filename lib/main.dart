@@ -10,6 +10,8 @@ void main() {
 // ! flutter sdk 에 있는 3개의 core widget중 하나를 extend 해야 한다.
 // ! build method 를 구현해야함.
 // ! flutter가 실행 및 build 메소드가 어떤 것을 return하던지 화면에 구현된다.
+// * constant 는 수정할 수 없고 compile 전에 그 value를 알 수 있는 변수
+
 class App extends StatelessWidget {
   const App({super.key});
 
