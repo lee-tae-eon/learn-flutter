@@ -87,20 +87,6 @@ class App extends StatelessWidget {
                                 fontSize: 16,
                               ))),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF1F2123),
-                        borderRadius: BorderRadius.circular(45),
-                      ),
-                      child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 20, horizontal: 50),
-                          child: Text("Request",
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                              ))),
-                    ),
                   ],
                 )
               ],
