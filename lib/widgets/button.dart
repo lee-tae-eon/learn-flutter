@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  const Button({super.key});
+  final String text;
+  final String bgColor;
+
+  const Button({super.key, required this.text, required this.bgColor});
 
   @override
   Widget build(BuildContext context) {
