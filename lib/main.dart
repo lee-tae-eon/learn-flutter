@@ -76,9 +76,10 @@ class App extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
                     Button(
-                        text: "Transfer",
-                        bgColor: Colors.amber,
-                        textColor: Colors.black),
+                      text: "Transfer",
+                      bgColor: Colors.amber,
+                      textColor: Colors.black,
+                    ),
                     Button(
                       text: "Request",
                       bgColor: Color.fromARGB(115, 84, 75, 75),
