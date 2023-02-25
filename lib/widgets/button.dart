@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  final Text text;
+  final String text;
   final Color bgColor;
   final Color textColor;
 
@@ -15,15 +15,15 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1F2123),
+        color: bgColor,
         borderRadius: BorderRadius.circular(45),
       ),
-      child: const Padding(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
-          child: Text("Request",
+      child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+          child: Text(text,
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.white,
+                color: textColor,
               ))),
     );
   }

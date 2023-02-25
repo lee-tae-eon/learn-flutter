@@ -74,22 +74,13 @@ class App extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(45),
-                      ),
-                      child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 20, horizontal: 50),
-                          child: Text("Transfer",
-                              style: TextStyle(
-                                fontSize: 16,
-                              ))),
-                    ),
-                    const Button(
-                      text: Text("Request"),
+                  children: const [
+                    Button(
+                        text: "Transfer",
+                        bgColor: Colors.amber,
+                        textColor: Colors.black),
+                    Button(
+                      text: "Request",
                       bgColor: Color.fromARGB(115, 84, 75, 75),
                       textColor: Colors.white,
                     )
