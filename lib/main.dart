@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toolflix/widgets/button.dart';
 
 // * flutter 는 위젯을 조합해서 애플리케이션을 만든다
 // * https://docs.flutter.dev/development/ui/widgets - 공식 widgets
@@ -87,6 +88,11 @@ class App extends StatelessWidget {
                                 fontSize: 16,
                               ))),
                     ),
+                    const Button(
+                      text: Text("Request"),
+                      bgColor: Color.fromARGB(115, 84, 75, 75),
+                      textColor: Colors.white,
+                    )
                   ],
                 )
               ],
