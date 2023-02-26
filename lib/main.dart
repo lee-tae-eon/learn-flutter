@@ -116,41 +116,50 @@ class App extends StatelessWidget {
                 height: 40,
               ),
               Container(
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(115, 84, 75, 75),
-                  ),
-                  child: Row(
-                    children: [
-                      Column(
-                        children: [
-                          const Text(
-                            "Euro",
-                            style: TextStyle(
-                              color: Colors.white,
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(115, 84, 75, 75),
+                      borderRadius: BorderRadius.circular(
+                        25,
+                      )),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 20,
+                      horizontal: 20,
+                    ),
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            const Text(
+                              "Euro",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 32,
+                                  fontWeight: FontWeight.w600),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: const [
-                              Text(
-                                "6 428",
-                                style: TextStyle(
-                                  color: Colors.white,
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: const [
+                                Text(
+                                  "6 428",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                "Euro",
-                                style: TextStyle(
-                                  color: Colors.white,
+                                Text(
+                                  "EUR",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          )
-                        ],
-                      )
-                    ],
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ))
             ],
           ),
