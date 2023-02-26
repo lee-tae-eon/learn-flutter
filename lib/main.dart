@@ -91,13 +91,22 @@ class App extends StatelessWidget {
                   height: 100,
                 ),
                 Row(
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       "Wallets",
                       style: TextStyle(
                         color: Colors.white,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w600,
                       ),
-                    )
+                    ),
+                    Text(
+                      "View All",
+                      style: TextStyle(
+                        // * opacity 같은 값은 compile 할때 알기 힘든 값이라 constant가 될 수 없다.
+                        color: Colors.white.withOpacity(0.8),
+                      ),
+                    ),
                   ],
                 )
               ],
