@@ -129,6 +129,7 @@ class App extends StatelessWidget {
                     child: Row(
                       children: [
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text(
                               "Euro",
@@ -148,6 +149,9 @@ class App extends StatelessWidget {
                                     color: Colors.white,
                                     fontSize: 20,
                                   ),
+                                ),
+                                const SizedBox(
+                                  width: 5,
                                 ),
                                 Text(
                                   "EUR",
