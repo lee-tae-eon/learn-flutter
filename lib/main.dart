@@ -25,7 +25,7 @@ class App extends StatelessWidget {
       home: Scaffold(
         backgroundColor: const Color.fromRGBO(27, 26, 26, 1),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
