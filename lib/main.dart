@@ -127,6 +127,7 @@ class App extends StatelessWidget {
                       horizontal: 20,
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,7 +164,9 @@ class App extends StatelessWidget {
                               ],
                             )
                           ],
-                        )
+                        ),
+                        const Icon(Icons.euro_rounded,
+                            color: Colors.white, size: 98)
                       ],
                     ),
                   ))
