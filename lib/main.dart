@@ -116,6 +116,7 @@ class App extends StatelessWidget {
                 height: 40,
               ),
               Container(
+                  clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(115, 84, 75, 75),
                       borderRadius: BorderRadius.circular(
@@ -166,9 +167,9 @@ class App extends StatelessWidget {
                           ],
                         ),
                         Transform.scale(
-                          scale: 2.2,
+                          scale: 2,
                           child: Transform.translate(
-                            offset: const Offset(0, 20),
+                            offset: const Offset(-5, 10),
                             child: const Icon(
                               Icons.euro_rounded,
                               color: Colors.white,
