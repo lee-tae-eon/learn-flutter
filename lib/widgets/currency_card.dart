@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CurrencyCard extends StatelessWidget {
   final String name, code, amount;
   final IconData icon;
+  final bool isInverted;
 
   const CurrencyCard({
     super.key,
@@ -10,6 +11,7 @@ class CurrencyCard extends StatelessWidget {
     required this.code,
     required this.amount,
     required this.icon,
+    this.isInverted = false,
   });
 
   @override
