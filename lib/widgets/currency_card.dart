@@ -20,7 +20,8 @@ class CurrencyCard extends StatelessWidget {
       // hardedge는 overflow hidden의 역할
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
-          color: const Color.fromARGB(115, 84, 75, 75),
+          color:
+              isInverted ? Colors.white : const Color.fromARGB(115, 84, 75, 75),
           borderRadius: BorderRadius.circular(
             25,
           )),
@@ -37,8 +38,8 @@ class CurrencyCard extends StatelessWidget {
               children: [
                 Text(
                   name,
-                  style: const TextStyle(
-                      color: Colors.white,
+                  style: TextStyle(
+                      color: isInverted ? Colors.black : Colors.white,
                       fontSize: 32,
                       fontWeight: FontWeight.w600),
                 ),
@@ -49,8 +50,8 @@ class CurrencyCard extends StatelessWidget {
                   children: [
                     Text(
                       amount,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: isInverted ? Colors.black : Colors.white,
                         fontSize: 20,
                       ),
                     ),
@@ -60,7 +61,9 @@ class CurrencyCard extends StatelessWidget {
                     Text(
                       code,
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.8),
+                        color: isInverted
+                            ? Colors.black.withOpacity(0.8)
+                            : Colors.white.withOpacity(0.8),
                         fontSize: 20,
                       ),
                     ),
@@ -77,7 +80,8 @@ class CurrencyCard extends StatelessWidget {
                 ),
                 child: Icon(
                   icon,
-                  color: Colors.white,
+                  color:
+                      isInverted ? Colors.black.withOpacity(0.8) : Colors.white,
                   size: 88,
                 ),
               ),
