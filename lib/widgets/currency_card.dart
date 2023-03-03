@@ -33,9 +33,9 @@ class CurrencyCard extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "Euro",
-                  style: TextStyle(
+                Text(
+                  name,
+                  style: const TextStyle(
                       color: Colors.white,
                       fontSize: 32,
                       fontWeight: FontWeight.w600),
@@ -45,9 +45,9 @@ class CurrencyCard extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    const Text(
-                      "6 428",
-                      style: TextStyle(
+                    Text(
+                      amount,
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                       ),
@@ -56,7 +56,7 @@ class CurrencyCard extends StatelessWidget {
                       width: 5,
                     ),
                     Text(
-                      "EUR",
+                      code,
                       style: TextStyle(
                         color: Colors.white.withOpacity(0.8),
                         fontSize: 20,
