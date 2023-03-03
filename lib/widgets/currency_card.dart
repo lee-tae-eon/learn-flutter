@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CurrencyCard extends StatelessWidget {
   final String name, code, amount;
-  final Icon icon;
+  final IconData icon;
 
   const CurrencyCard({
     super.key,
@@ -73,8 +73,8 @@ class CurrencyCard extends StatelessWidget {
                   -5,
                   10,
                 ),
-                child: const Icon(
-                  Icons.euro_rounded,
+                child: Icon(
+                  icon,
                   color: Colors.white,
                   size: 88,
                 ),
