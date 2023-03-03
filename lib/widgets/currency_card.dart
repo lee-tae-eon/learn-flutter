@@ -5,6 +5,8 @@ class CurrencyCard extends StatelessWidget {
   final IconData icon;
   final bool isInverted;
 
+  final _blackColor = Colors.black;
+
   const CurrencyCard({
     super.key,
     required this.name,
@@ -39,7 +41,7 @@ class CurrencyCard extends StatelessWidget {
                 Text(
                   name,
                   style: TextStyle(
-                      color: isInverted ? Colors.black : Colors.white,
+                      color: isInverted ? _blackColor : Colors.white,
                       fontSize: 32,
                       fontWeight: FontWeight.w600),
                 ),
@@ -51,7 +53,7 @@ class CurrencyCard extends StatelessWidget {
                     Text(
                       amount,
                       style: TextStyle(
-                        color: isInverted ? Colors.black : Colors.white,
+                        color: isInverted ? _blackColor : Colors.white,
                         fontSize: 20,
                       ),
                     ),
@@ -81,7 +83,7 @@ class CurrencyCard extends StatelessWidget {
                 child: Icon(
                   icon,
                   color:
-                      isInverted ? Colors.black.withOpacity(0.8) : Colors.white,
+                      isInverted ? _blackColor.withOpacity(0.8) : Colors.white,
                   size: 88,
                 ),
               ),
