@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CurrencyCard extends StatelessWidget {
+  final String name, code, amount;
+  final Icon icon;
+
   const CurrencyCard({
     super.key,
+    required this.name,
+    required this.code,
+    required this.amount,
+    required this.icon,
   });
 
   @override
