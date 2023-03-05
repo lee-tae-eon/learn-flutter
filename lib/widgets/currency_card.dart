@@ -22,8 +22,7 @@ class CurrencyCard extends StatelessWidget {
       // hardedge는 overflow hidden의 역할
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
-          color:
-              isInverted ? Colors.white : const Color.fromARGB(115, 84, 75, 75),
+          color: isInverted ? Colors.white : Colors.black,
           borderRadius: BorderRadius.circular(
             25,
           )),
@@ -82,8 +81,7 @@ class CurrencyCard extends StatelessWidget {
                 ),
                 child: Icon(
                   icon,
-                  color:
-                      isInverted ? _blackColor.withOpacity(0.8) : Colors.white,
+                  color: isInverted ? _blackColor : Colors.white,
                   size: 88,
                 ),
               ),
