@@ -25,111 +25,126 @@ class App extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color.fromRGBO(27, 26, 26, 1),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 80,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const Text("Hey, Taeeon",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 32,
-                              fontWeight: FontWeight.bold)),
-                      Text("welcome, back",
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.6),
-                            fontSize: 18,
-                          )),
-                    ],
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 100,
-              ),
-              Text("Total Balance",
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.white.withOpacity(0.8),
-                  )),
-              const SizedBox(
-                height: 10,
-              ),
-              const Text("\$5 194 482",
-                  style: TextStyle(
-                    fontSize: 44,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  )),
-              const SizedBox(
-                height: 24,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Button(
-                    text: "Transfer",
-                    bgColor: Colors.amber,
-                    textColor: Colors.black,
-                  ),
-                  Button(
-                    text: "Request",
-                    bgColor: Color.fromARGB(115, 84, 75, 75),
-                    textColor: Colors.white,
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 100,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  const Text(
-                    "Wallets",
+        // * overflow scroll
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 80,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        const Text("Hey, Taeeon",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold)),
+                        Text("welcome, back",
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.6),
+                              fontSize: 18,
+                            )),
+                      ],
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                Text("Total Balance",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 36,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Text(
-                    "View All",
-                    style: TextStyle(
-                      // * opacity 같은 값은 compile 할때 알기 힘든 값이라 constant가 될 수 없다.
+                      fontSize: 22,
                       color: Colors.white.withOpacity(0.8),
-                      fontSize: 18,
+                    )),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text("\$5 194 482",
+                    style: TextStyle(
+                      fontSize: 44,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    )),
+                const SizedBox(
+                  height: 24,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Button(
+                      text: "Transfer",
+                      bgColor: Colors.amber,
+                      textColor: Colors.black,
                     ),
+                    Button(
+                      text: "Request",
+                      bgColor: Color.fromARGB(115, 84, 75, 75),
+                      textColor: Colors.white,
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 100,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const Text(
+                      "Wallets",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      "View All",
+                      style: TextStyle(
+                        // * opacity 같은 값은 compile 할때 알기 힘든 값이라 constant가 될 수 없다.
+                        color: Colors.white.withOpacity(0.8),
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                const CurrencyCard(
+                  name: "Euro",
+                  code: "EUR",
+                  amount: "6 482",
+                  icon: Icons.euro_rounded,
+                ),
+                Transform.translate(
+                  offset: const Offset(0, -20),
+                  child: const CurrencyCard(
+                    name: "Bitcoin",
+                    code: "BTC",
+                    amount: "9 282",
+                    icon: Icons.currency_bitcoin,
+                    isInverted: true,
                   ),
-                ],
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              const CurrencyCard(
-                name: "Euro",
-                code: "EUR",
-                amount: "6 482",
-                icon: Icons.euro_rounded,
-              ),
-              const CurrencyCard(
-                name: "Bitcoin",
-                code: "BTC",
-                amount: "9 282",
-                icon: Icons.currency_bitcoin,
-                isInverted: true,
-              )
-            ],
+                ),
+                Transform.translate(
+                  offset: const Offset(0, -40),
+                  child: const CurrencyCard(
+                    name: "Dollar",
+                    code: "USD",
+                    amount: "9 282",
+                    icon: Icons.attach_money_outlined,
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
