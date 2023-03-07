@@ -27,9 +27,10 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     // * base가 되는 app  - 구글의 material or ios 의 cupertino중에 선태 -> material 추천
     // * rule - screen must need to have scaffold (provied structure)
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromRGBO(27, 26, 26, 1),
+        backgroundColor: const Color(0xFFF4EDDB),
+        body: Container(),
       ),
     );
   }
