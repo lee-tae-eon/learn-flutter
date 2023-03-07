@@ -22,6 +22,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  int counter = 0;
   // * override 부모 클래스의 메소드를 덮어씌움
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,23 @@ class _AppState extends State<App> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0xFFF4EDDB),
-        body: Container(),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text("Click Count",
+                  style: TextStyle(
+                    fontSize: 20,
+                  )),
+              Text(
+                "$counter",
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
