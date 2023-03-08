@@ -25,7 +25,8 @@ class _AppState extends State<App> {
   int counter = 0;
 
   void onClick() {
-    counter = counter + 1;
+    // * setState 함수
+    setState(() => {counter = counter + 1});
   }
 
   // * override 부모 클래스의 메소드를 덮어씌움
