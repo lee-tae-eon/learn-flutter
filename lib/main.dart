@@ -25,7 +25,6 @@ class _AppState extends State<App> {
   int counter = 0;
 
   void onClick() {
-    print("test");
     // * setState 함수
     setState(() => {counter = counter + 1});
   }
