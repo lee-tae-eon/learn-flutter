@@ -58,6 +58,7 @@ class _AppState extends State<App> {
                   fontSize: 20,
                 ),
               ),
+              for (var n in numbers) Text('$n'),
               IconButton(
                   onPressed: onClick,
                   icon: const Icon(
