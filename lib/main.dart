@@ -25,8 +25,12 @@ class _AppState extends State<App> {
   int counter = 0;
 
   void onClick() {
-    // * setState 함수
-    setState(() => {counter = counter + 1});
+    // * setState 함수 -> State class 에 data가 변경 되었다고 알려주는 함수.
+    // * 실행되어야 하는 코드가 setState에 있지 않아도 실행이 된다.
+    // * setState로 인해 ui가 다시 빌드 되기 때문이다.
+    counter = counter + 1;
+    setState(() => {});
+    // setState(() => {counter = counter + 1});
   }
 
   // * override 부모 클래스의 메소드를 덮어씌움
