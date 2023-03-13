@@ -22,9 +22,8 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  int counter = 0;
-
-  List<int> numbers = [];
+  // int counter = 0;
+  // List<int> numbers = [];
 
   void onClick() {
     // * setState 함수 -> State class 에 data가 변경 되었다고 알려주는 함수.
@@ -32,8 +31,8 @@ class _AppState extends State<App> {
     // * setState로 인해 ui가 다시 빌드 되기 때문이다.
     // counter = counter + 1;
     // setState(() => {});
-    print(numbers);
-    setState(() => {counter = counter + 1, numbers.add(numbers.length)});
+    // print(numbers);
+    // setState(() => {counter = counter + 1, numbers.add(numbers.length)});
   }
 
   // * override 부모 클래스의 메소드를 덮어씌움
@@ -47,23 +46,23 @@ class _AppState extends State<App> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text("Click Count",
+            children: const [
+              Text("Click Count",
                   style: TextStyle(
                     fontSize: 20,
                   )),
-              Text(
-                "$counter",
-                style: const TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-              for (var n in numbers) Text('$n'),
-              IconButton(
-                  onPressed: onClick,
-                  icon: const Icon(
-                    Icons.add_box_rounded,
-                  ))
+              // Text(
+              //   "$counter",
+              //   style: const TextStyle(
+              //     fontSize: 20,
+              //   ),
+              // ),
+              // for (var n in numbers) Text('$n'),
+              // IconButton(
+              //     onPressed: onClick,
+              //     icon: const Icon(
+              //       Icons.add_box_rounded,
+              //     ))
             ],
           ),
         ),
