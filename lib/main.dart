@@ -41,16 +41,20 @@ class _AppState extends State<App> {
     // * base가 되는 app  - 구글의 material or ios 의 cupertino중에 선태 -> material 추천
     // * rule - screen must need to have scaffold (provied structure)
     return MaterialApp(
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            color: Colors.red,
+          ),
+        ),
+      ),
       home: Scaffold(
         backgroundColor: const Color(0xFFF4EDDB),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
-              Text("Click Count",
-                  style: TextStyle(
-                    fontSize: 20,
-                  )),
+              MyLargeTitle(),
               // Text(
               //   "$counter",
               //   style: const TextStyle(
@@ -68,5 +72,19 @@ class _AppState extends State<App> {
         ),
       ),
     );
+  }
+}
+
+class MyLargeTitle extends StatelessWidget {
+  const MyLargeTitle({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text("My Large Title",
+        style: TextStyle(
+          fontSize: 20,
+        ));
   }
 }
