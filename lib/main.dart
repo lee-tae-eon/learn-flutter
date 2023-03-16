@@ -86,6 +86,7 @@ class _AppState extends State<App> {
 }
 
 // state widget => statefull widget으로 변경
+// statefullwidget have lifecycle
 class MyLargeTitle extends StatefulWidget {
   const MyLargeTitle({
     super.key,
