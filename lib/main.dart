@@ -24,6 +24,13 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   // int counter = 0;
   // List<int> numbers = [];
+  bool showTitle = true;
+
+  void toggleTitle() {
+    setState(() {
+      showTitle = !showTitle;
+    });
+  }
 
   void onClick() {
     // * setState 함수 -> State class 에 data가 변경 되었다고 알려주는 함수.
@@ -53,8 +60,11 @@ class _AppState extends State<App> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              MyLargeTitle(),
+            children: [
+              showTitle ? const MyLargeTitle() : const Text("nothing"),
+              IconButton(
+                  onPressed: toggleTitle,
+                  icon: const Icon(Icons.remove_red_eye))
               // Text(
               //   "$counter",
               //   style: const TextStyle(
@@ -96,6 +106,7 @@ class _MyLargeTitleState extends State<MyLargeTitle> {
   }
 
   // component did unmount 와 같은 역할?
+  // 위젯이 언트리 되기전에 이벤트를 해제 하는 역할.
   @override
   void dispose() {
     super.dispose();
