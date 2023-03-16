@@ -88,13 +88,23 @@ class MyLargeTitle extends StatefulWidget {
 class _MyLargeTitleState extends State<MyLargeTitle> {
   //  부모 요소에 의해 초기화가 되어야 하는경우 사용하는 함수 -> initState
   // init state methods 는 build method보다 먼저 호출 되어야 한다.
+  // component did mount와 같은 역할?
   @override
-  void initSate() {
+  void initState() {
     super.initState();
+    print("initState");
+  }
+
+  // component did unmount 와 같은 역할?
+  @override
+  void dispose() {
+    super.dispose();
+    print("test");
   }
 
   @override
   Widget build(BuildContext context) {
+    print("buildState");
     return Text("My Large Title",
         style: TextStyle(
             fontSize: 30,
