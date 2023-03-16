@@ -75,10 +75,23 @@ class _AppState extends State<App> {
   }
 }
 
-class MyLargeTitle extends StatelessWidget {
+// state widget => statefull widget으로 변경
+class MyLargeTitle extends StatefulWidget {
   const MyLargeTitle({
     super.key,
   });
+
+  @override
+  State<MyLargeTitle> createState() => _MyLargeTitleState();
+}
+
+class _MyLargeTitleState extends State<MyLargeTitle> {
+  //  부모 요소에 의해 초기화가 되어야 하는경우 사용하는 함수 -> initState
+  // init state methods 는 build method보다 먼저 호출 되어야 한다.
+  @override
+  void initSate() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
