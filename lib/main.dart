@@ -22,9 +22,15 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  int counter = 0;
+  // int counter = 0;
+  // List<int> numbers = [];
+  bool showTitle = true;
 
-  List<int> numbers = [];
+  void toggleTitle() {
+    setState(() {
+      showTitle = !showTitle;
+    });
+  }
 
   void onClick() {
     // * setState 함수 -> State class 에 data가 변경 되었다고 알려주는 함수.
@@ -32,8 +38,8 @@ class _AppState extends State<App> {
     // * setState로 인해 ui가 다시 빌드 되기 때문이다.
     // counter = counter + 1;
     // setState(() => {});
-    print(numbers);
-    setState(() => {counter = counter + 1, numbers.add(numbers.length)});
+    // print(numbers);
+    // setState(() => {counter = counter + 1, numbers.add(numbers.length)});
   }
 
   // * override 부모 클래스의 메소드를 덮어씌움
@@ -42,32 +48,78 @@ class _AppState extends State<App> {
     // * base가 되는 app  - 구글의 material or ios 의 cupertino중에 선태 -> material 추천
     // * rule - screen must need to have scaffold (provied structure)
     return MaterialApp(
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            color: Colors.red,
+          ),
+        ),
+      ),
       home: Scaffold(
         backgroundColor: const Color(0xFFF4EDDB),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("Click Count",
-                  style: TextStyle(
-                    fontSize: 20,
-                  )),
-              Text(
-                "$counter",
-                style: const TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-              for (var n in numbers) Text('$n'),
+              showTitle ? const MyLargeTitle() : const Text("nothing"),
               IconButton(
-                  onPressed: onClick,
-                  icon: const Icon(
-                    Icons.add_box_rounded,
-                  ))
+                  onPressed: toggleTitle,
+                  icon: const Icon(Icons.remove_red_eye))
+              // Text(
+              //   "$counter",
+              //   style: const TextStyle(
+              //     fontSize: 20,
+              //   ),
+              // ),
+              // for (var n in numbers) Text('$n'),
+              // IconButton(
+              //     onPressed: onClick,
+              //     icon: const Icon(
+              //       Icons.add_box_rounded,
+              //     ))
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+// state widget => statefull widget으로 변경
+// statefullwidget have lifecycle
+class MyLargeTitle extends StatefulWidget {
+  const MyLargeTitle({
+    super.key,
+  });
+
+  @override
+  State<MyLargeTitle> createState() => _MyLargeTitleState();
+}
+
+class _MyLargeTitleState extends State<MyLargeTitle> {
+  //  부모 요소에 의해 초기화가 되어야 하는경우 사용하는 함수 -> initState
+  // init state methods 는 build method보다 먼저 호출 되어야 한다.
+  // component did mount와 같은 역할?
+  @override
+  void initState() {
+    super.initState();
+    print("initState");
+  }
+
+  // component did unmount 와 같은 역할?
+  // 위젯이 언트리 되기전에 이벤트를 해제 하는 역할.
+  @override
+  void dispose() {
+    super.dispose();
+    print("test");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print("buildState");
+    return Text("My Large Title",
+        style: TextStyle(
+            fontSize: 30,
+            color: Theme.of(context).textTheme.titleLarge?.color));
   }
 }
