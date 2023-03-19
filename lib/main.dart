@@ -4,6 +4,9 @@ void main() {
   runApp(const App());
 }
 
+// color - background : 0xFFE7626C
+// headline : 0xFF232B55
+// card : 0xFFF4EDDB
 class App extends StatelessWidget {
   const App({super.key});
 
