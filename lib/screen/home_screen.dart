@@ -15,8 +15,18 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           // ui 를 responsible 하게 함
-          Flexible(flex: 1, child: Container()),
-          Flexible(flex: 2, child: Container()),
+          Flexible(
+              flex: 1,
+              child: Container(
+                alignment: Alignment.bottomCenter,
+                child: Text("25:00",
+                    style: TextStyle(
+                      color: Theme.of(context).cardColor,
+                      fontSize: 89,
+                      fontWeight: FontWeight.w600,
+                    )),
+              )),
+          const Flexible(flex: 2, child: Center()),
           Flexible(flex: 1, child: Container()),
         ],
       ),
