@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toolflix/screen/home_screen.dart';
 
 void main() {
   runApp(const App());
@@ -30,6 +31,7 @@ class App extends StatelessWidget {
           0xFFF4EDDB,
         ),
       ),
+      home: const HomeScreen(),
     );
   }
 }
