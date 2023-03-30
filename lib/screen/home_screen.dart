@@ -26,7 +26,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.w600,
                     )),
               )),
-          const Flexible(flex: 2, child: Center()),
+          Flexible(
+            flex: 3,
+            child: Center(
+              child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.play_circle_outline,
+                  )),
+            ),
+          ),
           Flexible(flex: 1, child: Container()),
         ],
       ),
