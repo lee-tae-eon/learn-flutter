@@ -38,7 +38,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   )),
             ),
           ),
-          Flexible(flex: 1, child: Container()),
+          Flexible(
+            flex: 1,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).cardColor,
+                    ),
+                    child: Column(
+                      children: const [
+                        Text("Pomodors"),
+                        Text("0"),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
