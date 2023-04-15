@@ -14,8 +14,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
   late Timer timer;
 
+  void onThick(Timer timer) {
+    setState(() {
+      totalSeconds = totalSeconds - 1;
+    });
+  }
+
   void onStartPressed() {
-    timer = Timer.periodic(const Duration(seconds: 1), (timer) { })
+    timer = Timer.periodic(
+      const Duration(
+        seconds: 1,
+      ),
+      onThick,
+    );
   }
 
   @override
