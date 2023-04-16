@@ -98,10 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     iconSize: 48,
                     color: Theme.of(context).cardColor,
                     onPressed: onPressed,
-                    icon: Icon(
-                      isRunning
-                          ? Icons.pause_circle_filled_outlined
-                          : Icons.play_circle_outline,
+                    icon: const Icon(
+                      Icons.refresh_rounded,
                     ),
                   ),
                 )
