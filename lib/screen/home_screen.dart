@@ -78,17 +78,34 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
           Flexible(
             flex: 3,
-            child: Center(
-              child: IconButton(
-                iconSize: 120,
-                color: Theme.of(context).cardColor,
-                onPressed: onPressed,
-                icon: Icon(
-                  isRunning
-                      ? Icons.pause_circle_filled_outlined
-                      : Icons.play_circle_outline,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: IconButton(
+                    iconSize: 120,
+                    color: Theme.of(context).cardColor,
+                    onPressed: onPressed,
+                    icon: Icon(
+                      isRunning
+                          ? Icons.pause_circle_filled_outlined
+                          : Icons.play_circle_outline,
+                    ),
+                  ),
                 ),
-              ),
+                Center(
+                  child: IconButton(
+                    iconSize: 48,
+                    color: Theme.of(context).cardColor,
+                    onPressed: onPressed,
+                    icon: Icon(
+                      isRunning
+                          ? Icons.pause_circle_filled_outlined
+                          : Icons.play_circle_outline,
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
           Flexible(
