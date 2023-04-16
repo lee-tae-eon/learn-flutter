@@ -49,6 +49,13 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  // * duration 함수 => 시간단위 변환.
+  String format(int seconds) {
+    var duration = Duration(seconds: seconds);
+    var timeformat = duration.toString().split(".").first.substring(2, 7);
+    return timeformat;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 alignment: Alignment.bottomCenter,
                 child: Text(
-                  "$totalSeconds",
+                  format(totalSeconds),
                   style: TextStyle(
                     color: Theme.of(context).cardColor,
                     fontSize: 89,
