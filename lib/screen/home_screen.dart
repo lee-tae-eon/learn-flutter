@@ -21,22 +21,19 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  void onStartPressed() {
-    timer = Timer.periodic(
-      const Duration(
-        seconds: 1,
-      ),
-      onThick,
-    );
+  void onPressed() {
+    if (!isRunning) {
+      timer = Timer.periodic(
+        const Duration(
+          seconds: 1,
+        ),
+        onThick,
+      );
+    } else {
+      timer.cancel();
+    }
     setState(() {
-      isRunning = true;
-    });
-  }
-
-  void onPausePressed() {
-    timer.cancel();
-    setState(() {
-      isRunning = false;
+      isRunning = !isRunning;
     });
   }
 
@@ -66,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: IconButton(
                 iconSize: 120,
                 color: Theme.of(context).cardColor,
-                onPressed: isRunning ? onPausePressed : onStartPressed,
+                onPressed: onPressed,
                 icon: Icon(
                   isRunning
                       ? Icons.pause_circle_filled_outlined
