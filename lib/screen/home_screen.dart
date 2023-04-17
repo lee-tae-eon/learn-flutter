@@ -49,6 +49,14 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void onRefreshed() {
+    timer.cancel();
+    setState(() {
+      totalSeconds = twentyFiveMin;
+      isRunning = false;
+    });
+  }
+
   // * duration 함수 => 시간단위 변환.
   String format(int seconds) {
     var duration = Duration(seconds: seconds);
@@ -95,12 +103,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Center(
                   child: IconButton(
-                    iconSize: 48,
+                    iconSize: 50,
                     color: Theme.of(context).cardColor,
-                    onPressed: onPressed,
-                    icon: const Icon(
-                      Icons.refresh_rounded,
-                    ),
+                    onPressed: onRefreshed,
+                    icon: const Icon(Icons.replay),
                   ),
                 )
               ],
