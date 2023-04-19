@@ -6,6 +6,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // scaffold는 기본적인 레이아웃과 설정을 제공해줌
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Today's Toon's",
+        ),
+      ),
+    );
   }
 }
