@@ -4,8 +4,9 @@ class ApiService {
   final String baseUrl = "https://webtoon-crawler.nomadcoders.workers.dev";
   final String today = "today";
 
-  void getTodaysToons() {
+  void getTodaysToons() async {
     final url = Uri.parse("$baseUrl/$today");
-    http.get(url);
+    var result = await http.get(url);
+    print(result);
   }
 }
