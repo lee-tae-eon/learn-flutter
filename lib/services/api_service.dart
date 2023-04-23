@@ -6,7 +6,10 @@ class ApiService {
 
   void getTodaysToons() async {
     final url = Uri.parse("$baseUrl/$today");
-    var result = await http.get(url);
-    print(result);
+    final result = await http.get(url);
+    if (result.statusCode == 200) {
+      print(result.body);
+    }
+    throw Error();
   }
 }
