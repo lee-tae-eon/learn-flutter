@@ -9,6 +9,7 @@ class ApiService {
     final result = await http.get(url);
     if (result.statusCode == 200) {
       print(result.body);
+      return;
     }
     throw Error();
   }
