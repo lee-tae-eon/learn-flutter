@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 class ApiService {
@@ -8,7 +10,11 @@ class ApiService {
     final url = Uri.parse("$baseUrl/$today");
     final result = await http.get(url);
     if (result.statusCode == 200) {
-      print(result.body);
+      final List<dynamic> webtoons = jsonDecode(result.body);
+      for (var web in webtoons) {
+        print(web);
+      }
+
       return;
     }
     throw Error();
