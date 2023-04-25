@@ -4,10 +4,15 @@ import 'package:http/http.dart' as http;
 import 'package:toolflix/models/webtoon_model.dart';
 
 class ApiService {
-  final String baseUrl = "https://webtoon-crawler.nomadcoders.workers.dev";
-  final String today = "today";
+// * final is a variable that once created can't be reassigned.
+// * static is a property of a class.
+// * const is a variable that should be known at compile time.
 
-  Future<List<WebtoonModel>> getTodaysToons() async {
+  static const String baseUrl =
+      "https://webtoon-crawler.nomadcoders.workers.dev";
+  static const String today = "today";
+
+  static Future<List<WebtoonModel>> getTodaysToons() async {
     List<WebtoonModel> webtoonInstance = [];
 
     final url = Uri.parse("$baseUrl/$today");
