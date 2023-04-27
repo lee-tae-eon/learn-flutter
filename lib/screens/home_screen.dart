@@ -26,6 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(isLoading);
+    print(webtoons);
     // scaffold는 기본적인 레이아웃과 설정을 제공해줌
     return Scaffold(
       backgroundColor: Colors.white,
