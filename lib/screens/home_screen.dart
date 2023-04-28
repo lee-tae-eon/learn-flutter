@@ -16,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void waitForWebToons() async {
     webtoons = await ApiService.getTodaysToons();
     isLoading = false;
+    setState(() {});
   }
 
   @override
