@@ -5,7 +5,7 @@ import 'package:toolflix/services/api_service.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  Future<List<WebtoonModel>> webtoons = ApiService.getTodaysToons();
+  final Future<List<WebtoonModel>> webtoons = ApiService.getTodaysToons();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,10 @@ class HomeScreen extends StatelessWidget {
           if (snapshot.hasData) {
             return const Text("there is data!");
           }
-          return const Text("Loading");
+          return const Center(
+            // loading indicator
+            child: CircularProgressIndicator(),
+          );
         },
       ),
     );
