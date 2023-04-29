@@ -24,6 +24,16 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+      body: FutureBuilder(
+        future: webtoons,
+        builder: (context, snapshot) {
+          print(context);
+          if (snapshot.hasData) {
+            return const Text("there is data!");
+          }
+          return const Text("Loading");
+        },
+      ),
     );
   }
 }
