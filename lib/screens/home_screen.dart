@@ -27,9 +27,12 @@ class HomeScreen extends StatelessWidget {
       body: FutureBuilder(
         future: webtoons,
         builder: (context, snapshot) {
-          print(context);
           if (snapshot.hasData) {
-            return const Text("there is data!");
+            return ListView(
+              children: [
+                for (var webtoon in snapshot.data!) Text(webtoon.title)
+              ],
+            );
           }
           return const Center(
             // loading indicator
