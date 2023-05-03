@@ -29,16 +29,15 @@ class HomeScreen extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             // dynamic builder
-            return ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: snapshot.data!.length,
-              itemBuilder: (context, index) {
-                var webtoon = snapshot.data![index];
-                return Text(webtoon.title);
-              },
-              separatorBuilder: (context, index) {
-                return const SizedBox(width: 20);
-              },
+            return Column(
+              children: [
+                const SizedBox(
+                  height: 50,
+                ),
+                Expanded(
+                  child: makeList(snapshot),
+                ),
+              ],
             );
           }
           return const Center(
@@ -47,6 +46,36 @@ class HomeScreen extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  ListView makeList(AsyncSnapshot<List<WebtoonModel>> snapshot) {
+    // 따로 User-Agent 값을 추가하지 않으면 기본값으로 `Dart/<version> (dart:io)` 가 들어갑니다.
+    // (https://api.flutter.dev/flutter/dart-io/HttpClient/userAgent.html)
+
+    // 이 값을 지우고 브라우저에서 사용하는 값으로 바꿔줍니다.
+    // (브라우저 값이 아니면 네이버에서 차단하는걸로 보입니다)
+    return ListView.separated(
+      scrollDirection: Axis.horizontal,
+      itemCount: snapshot.data!.length,
+      itemBuilder: (context, index) {
+        var webtoon = snapshot.data![index];
+        return Column(
+          children: [
+            Image.network(
+              webtoon.thumb,
+              headers: const {
+                "User-Agent":
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36",
+              },
+            ),
+            Text(webtoon.title),
+          ],
+        );
+      },
+      separatorBuilder: (context, index) {
+        return const SizedBox(width: 40);
+      },
     );
   }
 }
