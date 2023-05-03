@@ -50,6 +50,11 @@ class HomeScreen extends StatelessWidget {
   }
 
   ListView makeList(AsyncSnapshot<List<WebtoonModel>> snapshot) {
+    // 따로 User-Agent 값을 추가하지 않으면 기본값으로 `Dart/<version> (dart:io)` 가 들어갑니다.
+    // (https://api.flutter.dev/flutter/dart-io/HttpClient/userAgent.html)
+
+    // 이 값을 지우고 브라우저에서 사용하는 값으로 바꿔줍니다.
+    // (브라우저 값이 아니면 네이버에서 차단하는걸로 보입니다)
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: snapshot.data!.length,
