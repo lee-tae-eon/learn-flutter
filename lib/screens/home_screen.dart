@@ -29,7 +29,16 @@ class HomeScreen extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             // dynamic builder
-            return makeList(snapshot);
+            return Column(
+              children: [
+                const SizedBox(
+                  height: 50,
+                ),
+                Expanded(
+                  child: makeList(snapshot),
+                ),
+              ],
+            );
           }
           return const Center(
             // loading indicator
@@ -46,10 +55,21 @@ class HomeScreen extends StatelessWidget {
       itemCount: snapshot.data!.length,
       itemBuilder: (context, index) {
         var webtoon = snapshot.data![index];
-        return Text(webtoon.title);
+        return Column(
+          children: [
+            Image.network(
+              webtoon.thumb,
+              headers: const {
+                "User-Agent":
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36",
+              },
+            ),
+            Text(webtoon.title),
+          ],
+        );
       },
       separatorBuilder: (context, index) {
-        return const SizedBox(width: 20);
+        return const SizedBox(width: 40);
       },
     );
   }
