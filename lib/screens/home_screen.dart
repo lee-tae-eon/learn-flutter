@@ -58,6 +58,7 @@ class HomeScreen extends StatelessWidget {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: snapshot.data!.length,
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       itemBuilder: (context, index) {
         var webtoon = snapshot.data![index];
         return Column(
@@ -72,9 +73,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                        blurRadius: 5,
-                        offset: const Offset(0, 0),
-                        color: Colors.black.withOpacity(0.5))
+                        blurRadius: 10,
+                        offset: const Offset(10, 10),
+                        color: Colors.black.withOpacity(0.7))
                   ]),
               child: Image.network(
                 webtoon.thumb,
