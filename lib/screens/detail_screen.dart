@@ -12,6 +12,19 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 3,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        foregroundColor: Colors.green,
+        title: Text(
+          title,
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    );
   }
 }
