@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toolflix/screens/detail_screen.dart';
 
 class Webtoon extends StatelessWidget {
   final String title, thumb, id;
@@ -15,7 +16,18 @@ class Webtoon extends StatelessWidget {
     // gesturedetector는 대부분의 동작을 감지한다.
     return GestureDetector(
       onTap: () {
-        // print("go to home");
+        // route 는 위젯과 다르다.
+        // route는 위젯을 애니메이션 효과로 감싸서 스크린처럼 보이도록 하는 역할.
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailScreen(
+              title: title,
+              thumb: thumb,
+              id: id,
+            ),
+          ),
+        );
       },
       child: Column(
         children: [
