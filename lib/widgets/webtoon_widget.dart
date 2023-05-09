@@ -32,6 +32,8 @@ class Webtoon extends StatelessWidget {
       },
       child: Column(
         children: [
+          // * hero widget => likely framer motion - Animation prescense
+          // * tag id  -> another card id matching
           Hero(
             tag: id,
             child: Container(
