@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:toolflix/models/webtoon_detail_model.dart';
+import 'package:toolflix/models/webtoon_episode_model.dart';
 import 'package:toolflix/models/webtoon_model.dart';
 
 class ApiService {
@@ -34,9 +35,26 @@ class ApiService {
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final webtoon = jsonDecode(response.body);
-      print(webtoon);
 
       return WebtoonDetailModel.fromJson(webtoon);
+    }
+
+    throw Error();
+  }
+
+  static Future<List<WebtoonEpisodeModel>> getLatestEpisodeById(
+      String id) async {
+    List<WebtoonEpisodeModel> episodesIns = [];
+    final url = Uri.parse("$baseUrl/$id/episode");
+    final response = await http.get(url);
+    if (response.statusCode == 200) {
+      final responseEpi = jsonDecode(response.body);
+
+      for (var episode in responseEpi) {
+        episodesIns.add(WebtoonEpisodeModel.fromJson(episode));
+      }
+
+      return episodesIns;
     }
 
     throw Error();
