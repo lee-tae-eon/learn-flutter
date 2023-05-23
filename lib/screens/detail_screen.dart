@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toolflix/models/webtoon_detail_model.dart';
+import 'package:toolflix/models/webtoon_episode_model.dart';
 import 'package:toolflix/services/api_service.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -18,11 +19,14 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   late Future<WebtoonDetailModel> webtoon;
+  late Future<List<WebtoonEpisodeModel>> episodes;
 
   @override
   void initState() {
     super.initState();
     webtoon = ApiService.getToonById(widget.id);
+    episodes = ApiService.getLatestEpisodeById(widget.id);
+    print(webtoon);
   }
 
   @override
