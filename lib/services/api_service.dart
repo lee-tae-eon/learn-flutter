@@ -49,10 +49,10 @@ class ApiService {
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final responseEpi = jsonDecode(response.body);
-
-      for (var episode in responseEpi) {
-        episodesIns.add(WebtoonEpisodeModel.fromJson(episode));
-      }
+      print(responseEpi);
+      // for (var episode in responseEpi) {
+      episodesIns.add(WebtoonEpisodeModel.fromJson(responseEpi));
+      // }
 
       return episodesIns;
     }
