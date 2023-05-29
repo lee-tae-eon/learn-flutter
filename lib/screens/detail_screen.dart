@@ -85,6 +85,15 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
               ],
             ),
+            FutureBuilder(
+              future: webtoon,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data!.about);
+                }
+                return const Text("....");
+              },
+            )
           ],
         ));
   }
