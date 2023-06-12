@@ -26,7 +26,6 @@ class _DetailScreenState extends State<DetailScreen> {
     super.initState();
     webtoon = ApiService.getToonById(widget.id);
     episodes = ApiService.getLatestEpisodeById(widget.id);
-    print(webtoon);
   }
 
   @override
@@ -120,7 +119,16 @@ class _DetailScreenState extends State<DetailScreen> {
                 }
                 return const Text("....");
               },
-            )
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            FutureBuilder(
+                future: episodes,
+                builder: (cotenxt, snapshot) {
+                  if (snapshot.hasData) {}
+                  return Container();
+                })
           ],
         ));
   }
