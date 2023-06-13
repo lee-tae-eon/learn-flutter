@@ -14,37 +14,41 @@ class Episode extends StatelessWidget {
     final url = Uri.parse("https://google.com");
     await launchUrl(url);
   }
+  // "https://comic.naver.com/webtoon/detail?titleId=183559&no=569"
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10),
-      decoration: BoxDecoration(
-        color: Colors.green.shade400,
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 10,
-          horizontal: 20,
+    return GestureDetector(
+      onTap: onButtonTap,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 10),
+        decoration: BoxDecoration(
+          color: Colors.green.shade400,
+          borderRadius: BorderRadius.circular(15),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Flexible(
-              child: Text(
-                episode.title,
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    overflow: TextOverflow.ellipsis),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+            horizontal: 20,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: Text(
+                  episode.title,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      overflow: TextOverflow.ellipsis),
+                ),
               ),
-            ),
-            const Icon(
-              Icons.chevron_right_rounded,
-              color: Colors.white,
-            )
-          ],
+              const Icon(
+                Icons.chevron_right_rounded,
+                color: Colors.white,
+              )
+            ],
+          ),
         ),
       ),
     );
