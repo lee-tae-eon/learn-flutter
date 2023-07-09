@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toolflix/models/webtoon_detail_model.dart';
 import 'package:toolflix/models/webtoon_episode_model.dart';
 import 'package:toolflix/services/api_service.dart';
@@ -21,12 +22,23 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   late Future<WebtoonDetailModel> webtoon;
   late Future<List<WebtoonEpisodeModel>> episodes;
+  late SharedPreferences prefs;
+
+  Future initPref() async {
+    prefs = await SharedPreferences.getInstance();
+    final likedToons = prefs.getStringList("likeToons");
+    if (likedToons != null) {
+    } else {
+      await prefs.setStringList("likeToons", []);
+    }
+  }
 
   @override
   void initState() {
     super.initState();
     webtoon = ApiService.getToonById(widget.id);
     episodes = ApiService.getLatestEpisodeById(widget.id);
+    initPref();
   }
 
   @override
@@ -37,6 +49,14 @@ class _DetailScreenState extends State<DetailScreen> {
         elevation: 3,
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         foregroundColor: Colors.green,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.favorite_outline_outlined,
+            ),
+          )
+        ],
         title: Text(
           // * widget  => this widget =DetailScreen
           widget.title,
