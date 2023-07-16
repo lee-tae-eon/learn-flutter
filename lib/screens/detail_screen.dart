@@ -23,11 +23,17 @@ class _DetailScreenState extends State<DetailScreen> {
   late Future<WebtoonDetailModel> webtoon;
   late Future<List<WebtoonEpisodeModel>> episodes;
   late SharedPreferences prefs;
+  bool isLiked = false;
 
   Future initPref() async {
     prefs = await SharedPreferences.getInstance();
     final likedToons = prefs.getStringList("likeToons");
     if (likedToons != null) {
+      if (likedToons.contains(widget.id) == true) {
+        setState(() {
+          isLiked = true;
+        });
+      }
     } else {
       await prefs.setStringList("likeToons", []);
     }
@@ -41,6 +47,18 @@ class _DetailScreenState extends State<DetailScreen> {
     initPref();
   }
 
+  onHeartTap() async {
+    final likedToons = prefs.getStringList('likedToons');
+    if (likedToons != null) {
+      if (isLiked) {
+        likedToons.remove(widget.id);
+      } else {
+        likedToons.add(widget.id);
+      }
+      await prefs.setStringList("likedToons", likedToons);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +69,11 @@ class _DetailScreenState extends State<DetailScreen> {
         foregroundColor: Colors.green,
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.favorite_outline_outlined,
+            onPressed: onHeartTap,
+            icon: Icon(
+              isLiked
+                  ? Icons.favorite_rounded
+                  : Icons.favorite_outline_outlined,
             ),
           )
         ],
